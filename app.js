@@ -8,6 +8,18 @@ app.use(express.static('public'));
 
 // 기본 경로에서 index.html 파일을 렌더링합니다.
 app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'main.html'));
+});
+
+app.get('/event', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'event.html'));
+});
+
+app.get('/food', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'food.html'));
+});
+
+app.get('/lineup', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
