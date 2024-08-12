@@ -5,6 +5,19 @@ const app = express();
 
 // 정적 파일을 제공하기 위해 public 폴더를 사용합니다.
 app.use(express.static('public'));
+const spawn = require('child_process').spawn;
+
+app.get('/weather', (req, res) => {
+  const result_01 = spawn('python', ['weatherInfo.py']);
+  
+  result_01.stdout.on('data', (data) => {
+      res.send(data.toString());
+  });
+  
+  result_01.stderr.on('data', (data) => {
+      res.status(500).send(data.toString());
+  });
+});
 
 // 기본 경로에서 index.html 파일을 렌더링합니다.
 app.get('/', (req, res) => {

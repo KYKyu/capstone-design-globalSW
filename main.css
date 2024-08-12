@@ -1,0 +1,80 @@
+/* Styles for the main container */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e3e9d4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styles for the main heading */
+h1 {
+    display: none; /* Hides the main page heading */
+}
+
+/* Styles for the buttons */
+a {
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+    background-color: #464646;
+    color: #fff;
+    padding: 15px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+/* Style for weather and subway information sections */
+#subwayInfo, #weatherInfo {
+    background-color: #c5c6b6;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    width: 320px;
+}
+
+/* Weather information specifics */
+#weatherInfo {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Styles for the subway timetable */
+#subwayInfo p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+/* Weather forecast styling */
+.weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.weather img {
+    width: 30px;
+    height: 30px;
+}
+
+.weather p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Additional custom styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
