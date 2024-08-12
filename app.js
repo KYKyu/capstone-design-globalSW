@@ -20,7 +20,7 @@ app.get('/food', (req, res) => {
 });
 
 app.get('/lineup', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'lineup.html'));
 });
 
 // 서버를 포트 3000에서 실행합니다.
