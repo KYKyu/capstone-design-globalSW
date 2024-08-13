@@ -34,6 +34,16 @@
             padding: 10px 20px;
             cursor: pointer;
         }
+        .team-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: -20px;
+        }
+        .team-container img {
+            width: 90px;
+            height: 68px;
+        }
         
         /* 미디어 쿼리 - 화면 크기가 768px 이하일 때 */
         @media (max-width: 768px) {
@@ -58,6 +68,13 @@
     </style>
 </head>
 <body>
+    <div class="team-container">
+        <img src="team1_logo.png" alt="Samsung" />
+        <h4 class="vs-text">VS</h4>
+        <img src="team2_logo.png" alt="kt wiz" />
+    </div>  
+    <!-- 중앙 텍스트 -->
+    <h4>대구 삼성 라이온즈 파크</h4>
     <img src="foodLocation.jpg" alt="메뉴 안내 지도">
     <ul id="restaurant-list">
         <li><a href="ttangttang-chicken.html">땅땅 치킨</a></li>
