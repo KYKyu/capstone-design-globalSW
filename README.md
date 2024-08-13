@@ -1,1 +1,1 @@
-# KYKyu-capstone-design-globalSW
+# capstone-design-globalSW
