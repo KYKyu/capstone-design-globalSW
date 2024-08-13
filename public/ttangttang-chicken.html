@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>땅땅치킨 메뉴</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .image-container {
+            display: flex;
+            flex-direction: row; /* 가로 방향으로 배열 */
+            justify-content: space-around; /* 항목 간의 공간을 균등하게 분배 */
+            flex-wrap: wrap; /* 줄 바꿈 허용 */
+            margin-bottom: 20px;
+        }
+        .image-container > div {
+            text-align: center; /* 이미지와 텍스트 중앙 정렬 */
+            margin: 10px; /* 각 이미지 블록 사이에 여백 추가 */
+        }
+        img {
+            width: 100%; /* 이미지 너비를 100%로 설정 */
+            max-width: 200px; /* 최대 너비 설정 */
+            height: auto;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>땅땅치킨 메뉴</h1>
+    <div class="image-container">
+      <div>
+        <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230524_115%2F1684887722087jPfOr_PNG%2F%25C7%25E3%25BA%25EA%25BC%25F8%25BB%25EC%25C4%25A1%25C5%25B2.PNG" alt="땅땅 치킨 이미지">
+          <p>허브 순살 치킨 23000원</p>
+      </div>
+      <div>
+        <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230524_80%2F1684888290601nEQXN_PNG%2F%25C7%25F6%25C1%25D8%2527s.PNG" alt="땅땅 치킨 이미지">
+          <p>&nbsp;&nbsp;현준's 땅땅 세트 25000원</p>
+      </div>
+      <div>
+        <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230524_64%2F16848879500251HWSL_PNG%2F%25B8%25C5%25C4%25DF%25C2%25FD%25BD%25BA.PNG" alt="땅땅 치킨 이미지">
+          <p>&nbsp;&nbsp;매콤 찹스 (야구장 한정) 24000원</p>
+      </div>
+    </div>
+</body>
+</html>
+
+
