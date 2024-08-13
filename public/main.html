@@ -4,22 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>안녕하세요</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            font-size: 48px;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <title>Main Page</title>
 </head>
 <body>
-    <h1>안녕하세요</h1>
+    <h1>main page</h1>
+    <a href="lineup.html">라인업</a><br>
+    <a href="food.html">식당</a><br>
+    <a href="event.html">이벤트</a>
+
+    <p id="subwayInfo">문양 방면: 23:17<br>
+    문양(이곡) 방면: 23:30<br>
+    영남대 방면: 23:48</p>
+
+    <p id="weatherInfo"></p>
+
+    <script>
+        window.onload = function() {
+            getWeatherInfo();
+        };
+
+        function getWeatherInfo() {
+            fetch('/weather')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('weatherInfo').innerText = data;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+
 </body>
 </html>

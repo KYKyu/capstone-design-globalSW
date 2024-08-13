@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스태프 핫도그 메뉴</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 20px; /* 패딩 추가 */
+            box-sizing: border-box; /* 패딩 포함 크기 조정 */
+        }
+        h1 {
+            text-align: center; /* 제목 중앙 정렬 */
+            margin-bottom: 20px; /* 제목과 이미지 사이 여백 추가 */
+        }
+        .image-container {
+            display: flex;
+            flex-direction: row; /* 가로 방향으로 배열 */
+            justify-content: space-around; /* 항목 간의 공간을 균등하게 분배 */
+            flex-wrap: wrap; /* 줄 바꿈 허용 */
+            margin-bottom: 20px;
+            width: 100%; /* 전체 너비 사용 */
+            max-width: 800px; /* 최대 너비 제한 */
+        }
+        .image-container > div {
+            text-align: center; /* 이미지와 텍스트 중앙 정렬 */
+            margin: 10px; /* 각 이미지 블록 사이에 여백 추가 */
+            flex: 1 1 150px; /* 최소 너비 설정 */
+        }
+        img {
+            width: 100%; /* 이미지 너비를 100%로 설정 */
+            max-width: 200px; /* 최대 너비 설정 */
+            height: auto;
+        }
+        /* 미디어 쿼리 - 화면 크기가 768px 이하일 때 */
+        @media (max-width: 768px) {
+            .image-container > div {
+                flex: 1 1 120px; /* 작은 화면에서 최소 너비 조정 */
+            }
+            h1 {
+                font-size: 24px; /* 제목 크기 조정 */
+            }
+        }
+
+        /* 미디어 쿼리 - 화면 크기가 480px 이하일 때 */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px; /* 제목 크기 조정 */
+            }
+            img {
+                max-width: 150px; /* 작은 화면에서 이미지 최대 너비 조정 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>스태프 핫도그 메뉴</h1>
+    <div class="image-container">
+      <div>
+          <img src="https://ldb-phinf.pstatic.net/20240307_297/17098019361676ldPj_JPEG/%B0%A5%B8%AF%BB%E7%BF%F6%B4%F6%B4%DC%C7%B0.jpg" alt="갈릭사워덕">
+          <p>갈릭사워덕 4900원</p>
+      </div>
+      <div>
+          <img src="https://ldb-phinf.pstatic.net/20240307_246/1709801876116zSUkm_JPEG/%28%B4%BA%29%BD%BA%C5%D7%C7%C1%C7%D6%B5%B5%B1%D7%B4%DC%C7%B0.jpg" alt="스테프핫도그">
+          <p>스테프핫도그 4800원</p>
+      </div>
+      <div>
+          <img src="https://ldb-phinf.pstatic.net/20240307_194/1709801830726L5gux_JPEG/%C4%A1%C1%EE%C4%A5%B8%AE%B4%F6%B4%DC%C7%B0.jpg" alt="치즈칠리덕">
+          <p>치즈칠리덕 4500원</p>
+      </div>
+    </div>
+</body>
+</html>
+

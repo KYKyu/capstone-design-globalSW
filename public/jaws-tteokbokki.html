@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>죠스떡볶이 메뉴</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: auto; /* 높이를 자동으로 조정 */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            padding: 20px; /* 패딩 추가 */
+            box-sizing: border-box; /* 패딩 포함 크기 조정 */
+        }
+        h1 {
+            text-align: center; /* 제목 중앙 정렬 */
+            margin-bottom: 20px; /* 제목과 이미지 사이 여백 추가 */
+        }
+        .image-container {
+            display: flex;
+            flex-direction: row; /* 가로 방향으로 배열 */
+            justify-content: space-around; /* 항목 간의 공간을 균등하게 분배 */
+            flex-wrap: wrap; /* 줄 바꿈 허용 */
+            margin-bottom: 20px;
+            width: 100%; /* 전체 너비 사용 */
+            max-width: 800px; /* 최대 너비 제한 */
+        }
+        .image-container > div {
+            text-align: center; /* 이미지와 텍스트 중앙 정렬 */
+            margin: 10px; /* 각 이미지 블록 사이에 여백 추가 */
+            flex: 1 1 150px; /* 최소 너비를 설정하여 반응형으로 조정 */
+        }
+        img {
+            width: 100%; /* 이미지 너비를 100%로 설정 */
+            max-width: 200px; /* 최대 너비 설정 */
+            height: auto;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* 미디어 쿼리 - 화면 크기가 768px 이하일 때 */
+        @media (max-width: 768px) {
+            .image-container > div {
+                flex: 1 1 120px; /* 작은 화면에서 최소 너비 조정 */
+            }
+            h1 {
+                font-size: 24px; /* 제목 크기 조정 */
+            }
+        }
+
+        /* 미디어 쿼리 - 화면 크기가 480px 이하일 때 */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px; /* 제목 크기 조정 */
+            }
+            img {
+                max-width: 150px; /* 작은 화면에서 이미지 최대 너비 조정 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>죠스떡볶이 메뉴</h1>
+    <div class="image-container">
+      <div>
+        <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20171117_17%2F1510896330977UMKHz_PNG%2Fg6DDRoVCf05EMkQovXIVIXT0.png" alt="죠스 떡볶이 이미지">
+          <p>죠스 떡볶이 5000원</p>
+      </div>
+      <div>
+        <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20171117_254%2F1510896524808L7U9B_PNG%2FK9bX14PK0NnIQtd5CDkQ8psd.png" alt="죠스 찰순대 이미지">
+          <p>죠스 찰순대 4500원</p>
+      </div>
+      <div>
+        <img src="https://ldb-phinf.pstatic.net/20180618_280/1529309053428a3LmO_JPEG/T7arzNs2us8d53mZU8ov2XZx.JPG.jpg" alt="빠삭촉촉만두 이미지">
+          <p>빠삭촉촉만두 5000원</p>
+      </div>
+    </div>
+</body>
+</html>

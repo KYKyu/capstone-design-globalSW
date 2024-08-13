@@ -1,4 +1,3 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,20 +5,335 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>안녕하세요</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        body { 
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             font-family: Arial, sans-serif;
         }
-        h1 {
-            font-size: 48px;
+
+        .container {
+             text-align: center;
+             padding-top: 30px;
+        }
+
+        .team-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .team-container img {
+            width: 90px;
+            height: 68px;
+        }
+
+        .vs-text {
+            margin: 0 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h1, h4 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .carousel_main {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            overflow: hidden;
+            margin-top: 20px;
+            margin: 0 auto;
+        }
+
+        .carousel_wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel_slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel_button_container {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .carousel_button_container button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .carousel_pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .carousel_circle {
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .carousel_circle.active {
+            background-color: #333;
+        }
+
+        .form-link {
+            margin-top: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .form-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .event-info {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+            color: #555;
+        }
+
+        ._event-info {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <h1>안녕하세요</h1>
+
+    <!-- 전체 중앙 정렬 컨테이너 -->
+    <div class="container">
+        <!-- 상단 중앙 이미지와 VS 텍스트 -->
+        <div class="team-container">
+            <img src="samsung.png" alt="Samsung" />
+            <h4 class="vs-text">VS</h4>
+            <img src="kt_wiz.png" alt="kt wiz" />
+        </div>
+
+        <!-- 중앙 텍스트 -->
+        <h4>대구 삼성 라이온즈 파크</h4>
+        <h1 style="padding-top: 30px;">kt WIZ</h1>
+
+        <!--  첫 번째 캐러셀 -->
+        <div class="carousel_main">
+            <div class="carousel_wrapper">
+                <div class="carousel_slide">
+                    <img src="event1.jpg" alt="Event 1" />
+                </div>
+                <div class="carousel_slide">
+                    <img src="event2.jpg" alt="Event 2" />
+                </div>
+                <div class="carousel_slide">
+                    <img src="event3.jpg" alt="Event 3" />
+                </div>
+                <div class="carousel_slide">
+                    <img src="event4.jpg" alt="Event 4" />
+                </div>
+                <div class="carousel_slide">
+                    <img src="event5.jpg" alt="Event 5" />
+                </div>
+            </div>
+
+            <!-- 캐러셀 사이드 버튼 -->
+            <div class="carousel_button_container">
+                <button type="button" class="carousel_prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                        <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </button>
+                <button type="button" class="carousel_next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 캐러셀 중앙 버튼 -->
+            <div class="carousel_pagination">
+                <div class="carousel_circle"></div>
+                <div class="carousel_circle"></div>
+                <div class="carousel_circle"></div>
+                <div class="carousel_circle"></div>
+                <div class="carousel_circle"></div>
+            </div>
+        </div>
+
+        <!-- 참여신청 폼 링크 -->
+        <div class="form-link">
+            <a href="https://naver.me/xKEgMuz2" target="_blank">참여신청 폼</a>
+        </div>
+
+        <!-- 이벤트 정보 -->
+        <div class="event-info">
+            <p>출석 체크 : 2024.7.27(토) 오전 9:00 ~ 10:30까지</p>
+            <p>출석 체크 위치 : 수원케이티위즈파크 동문 주차장 앞(3루 입장 게이트 측)</p>
+            <p>출발 시간 : 2024.7.27(토) 오전 10:50분 출발</p>
+        </div>
+    </div>
+
+        <!-- SAMSUNG Lions 텍스트 -->
+        <h1 style="margin-top: 100px;">SAMSUNG Lions</h1>
+
+        <!-- 두 번째 캐러셀 -->
+        <div class="carousel_main">
+            <div class="carousel_wrapper">
+                <div class="carousel_slide">
+                    <img src="_event1.jpg" alt="_event1" />
+                </div>
+                <div class="carousel_slide">
+                    <img src="_event2.jpg" alt="_event2" />
+                </div>
+                <div class="carousel_slide">
+                    <img src="_event3.jpg" alt="_event3" />
+                </div>
+                <div class="carousel_slide">
+                    <img src="_event4.jpg" alt="_event4" />
+                </div>
+            </div>
+
+            <!-- 캐러셀 사이드 버튼 -->
+            <div class="carousel_button_container">
+                <button type="button" class="carousel_prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                        <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </button>
+                <button type="button" class="carousel_next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 캐러셀 중앙 버튼 -->
+            <div class="carousel_pagination">
+                <div class="carousel_circle"></div>
+                <div class="carousel_circle"></div>
+                <div class="carousel_circle"></div>
+                <div class="carousel_circle"></div>
+            </div>
+
+                    <!-- 삼성 이벤트 정보 -->
+        <div class="_event-info">
+            <p>일정 : 2024.7.27(토)</p>
+            <p>선수 사인회, 포토타임 이벤트 : 1루 땅땅치킨 앞</p>
+            <p>포토카드 & 장미꽃 증정 이벤트 : 라팍 광장 내 heROSE 부스</p>
+        </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.carousel_slide');
+        const prevButton = document.querySelector('.carousel_prev');
+        const nextButton = document.querySelector('.carousel_next');
+        const paginationCircles = document.querySelectorAll('.carousel_circle');
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            const totalSlides = slides.length;
+            const newTransformValue = `translateX(-${index * 100}%)`;
+            document.querySelector('.carousel_wrapper').style.transform = newTransformValue;
+
+            paginationCircles.forEach((circle, i) => {
+                circle.classList.toggle('active', i === index);
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel(currentIndex);
+        });
+
+        paginationCircles.forEach((circle, index) => {
+            circle.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel(currentIndex);
+            });
+        });
+
+        updateCarousel(currentIndex); // 초기화
+
+        // 두 번째 캐러셀에 대한 스크립트
+        const slides2 = document.querySelectorAll('.carousel_main:last-of-type .carousel_slide');
+        const prevButton2 = document.querySelector('.carousel_main:last-of-type .carousel_prev');
+        const nextButton2 = document.querySelector('.carousel_main:last-of-type .carousel_next');
+        const paginationCircles2 = document.querySelectorAll('.carousel_main:last-of-type .carousel_circle');
+
+        let currentIndex2 = 0;
+
+        function updateCarousel2(index) {
+            const totalSlides2 = slides2.length;
+            const newTransformValue2 = `translateX(-${index * 100}%)`;
+            document.querySelector('.carousel_main:last-of-type .carousel_wrapper').style.transform = newTransformValue2;
+
+            paginationCircles2.forEach((circle, i) => {
+                circle.classList.toggle('active', i === index);
+            });
+        }
+
+        prevButton2.addEventListener('click', () => {
+            currentIndex2 = (currentIndex2 - 1 + slides2.length) % slides2.length;
+            updateCarousel2(currentIndex2);
+        });
+
+        nextButton2.addEventListener('click', () => {
+            currentIndex2 = (currentIndex2 + 1) % slides2.length;
+            updateCarousel2(currentIndex2);
+        });
+
+        paginationCircles2.forEach((circle, index) => {
+            circle.addEventListener('click', () => {
+                currentIndex2 = index;
+                updateCarousel2(currentIndex2);
+            });
+        });
+
+        updateCarousel2(currentIndex2); // 초기화
+    </script>
 </body>
 </html>

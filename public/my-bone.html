@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이본 메뉴</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 20px; /* 패딩 추가 */
+            box-sizing: border-box; /* 패딩 포함 크기 조정 */
+        }
+        h1 {
+            text-align: center; /* 제목 중앙 정렬 */
+            margin-bottom: 20px; /* 제목과 이미지 사이 여백 추가 */
+        }
+        .image-container {
+            display: flex;
+            flex-direction: row; /* 가로 방향으로 배열 */
+            justify-content: space-around; /* 항목 간의 공간을 균등하게 분배 */
+            flex-wrap: wrap; /* 줄 바꿈 허용 */
+            margin-bottom: 20px;
+            width: 100%; /* 전체 너비 사용 */
+            max-width: 800px; /* 최대 너비 제한 */
+        }
+        .image-container > div {
+            text-align: center; /* 이미지와 텍스트 중앙 정렬 */
+            margin: 10px; /* 각 이미지 블록 사이에 여백 추가 */
+            flex: 1 1 150px; /* 최소 너비 설정 */
+        }
+        img {
+            width: 100%; /* 이미지 너비를 100%로 설정 */
+            max-width: 200px; /* 최대 너비 설정 */
+            height: auto;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* 미디어 쿼리 - 화면 크기가 768px 이하일 때 */
+        @media (max-width: 768px) {
+            .image-container > div {
+                flex: 1 1 120px; /* 작은 화면에서 최소 너비 조정 */
+            }
+            h1 {
+                font-size: 24px; /* 제목 크기 조정 */
+            }
+        }
+
+        /* 미디어 쿼리 - 화면 크기가 480px 이하일 때 */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px; /* 제목 크기 조정 */
+            }
+            img {
+                max-width: 150px; /* 작은 화면에서 이미지 최대 너비 조정 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>마이본 메뉴</h1>
+    <div class="image-container">
+      <div>
+        <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fthingool123.godohosting.com%2Fdata%2Fgoods%2Feditor%2F220923%2FE_170330.jpg&type=a340" alt="새우닭강정 이미지">
+          <p>새우닭강정 15000원</p>
+      </div>
+      <div>
+        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20230717_186%2F1689557310900cMrK9_JPEG%2F20750339793074941_88908223.jpg&type=a340" alt="양념닭강정 이미지">
+          <p>양념닭강정 11000원</p>
+      </div>
+      <div>
+        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F277%2F2021%2F06%2F21%2F0004923368_001_20210621083107582.jpg&type=a340" alt="간장닭강정 이미지">
+          <p>간장닭강정 11000원</p>
+      </div>
+    </div>
+</body>
+</html>
