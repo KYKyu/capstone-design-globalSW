@@ -10,7 +10,16 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+.team-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -20px;
+}
+.team-container img {
+    width: 90px;
+    height: 68px;
+}
 /* Styles for the main heading */
 h1 {
     display: none; /* Hides the main page heading */
