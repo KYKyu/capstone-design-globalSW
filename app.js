@@ -8,7 +8,7 @@ app.use(express.static('public'));
 const spawn = require('child_process').spawn;
 
 app.get('/weather', (req, res) => {
-  const result_01 = spawn('python', ['weatherInfo.py']);
+  const result_01 = spawn('python', ['./weatherInfo.py']);
   
   result_01.stdout.on('data', (data) => {
       res.send(data.toString());
