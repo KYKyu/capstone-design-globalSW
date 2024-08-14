@@ -12,28 +12,29 @@ const spawn = require('child_process').spawn;
 
 app.get('/weather', async (req, res) => {
   try {
-      const url = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%82%BC%EC%84%B1%EB%9D%BC%EC%9D%B4%EC%98%A8%EC%A6%88%ED%8C%8C%ED%81%AC+%EB%82%A0%EC%94%A8';
-      const response = await axios.get(url, { 
-          headers: { 'User-Agent': 'Mozilla/5.0' } 
-      });
+    const url = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%82%BC%EC%84%B1%EB%9D%BC%EC%9D%B4%EC%98%A8%EC%A6%88%ED%8C%8C%ED%81%AC+%EB%82%A0%EC%94%A8';
+    const response = await axios.get(url, { 
+        headers: { 'User-Agent': 'Mozilla/5.0' } 
+    });
 
-      const html = response.data;
-      const $ = cheerio.load(html);
-      
-      const temps = $('div.graph_inner._hourly_weather').text().trim();
-      let result = "";
+    const html = response.data;
+    const $ = cheerio.load(html);
+    
+    const temps = $('div.graph_inner._hourly_weather').text().trim();
+    const words = temps.split(/\s+/); // 공백으로 텍스트를 나누어 단어 배열 생성
+    let result = "";
 
-      let startIndex = 0;
-      for (let i = 0; i < 8; i++) {
-          const weather = temps.substring(startIndex, startIndex + 16);
-          startIndex += 23;
-          result += weather + "\n";
-      }
+    let index = 0;
+    for (let i = 0; i < 8; i++) {
+        const weather = words.slice(index, index + 3).join(' '); // 3 단어씩 가져오기
+        index += 3;
+        result += weather + "\n";
+    }
 
       res.send(result);
-  } catch (error) {
-      res.status(500).send('Error occurred while fetching weather data: ' + error.message);
-  }
+    } catch (error) {
+        res.status(500).send('Error occurred while fetching weather data: ' + error.message);
+    }
 });
 
 // 기본 경로에서 index.html 파일을 렌더링합니다.
