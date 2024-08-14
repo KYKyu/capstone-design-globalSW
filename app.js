@@ -10,7 +10,6 @@ const cheerio = require('cheerio');
 app.use(express.static('public'));
 const spawn = require('child_process').spawn;
 
-// 서울 날씨 크롤링 API 엔드포인트
 app.get('/weather', async (req, res) => {
   try {
       const url = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%82%BC%EC%84%B1%EB%9D%BC%EC%9D%B4%EC%98%A8%EC%A6%88%ED%8C%8C%ED%81%AC+%EB%82%A0%EC%94%A8';
