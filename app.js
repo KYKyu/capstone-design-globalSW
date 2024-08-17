@@ -9,53 +9,37 @@ app.use(express.static('public'));
 
 app.get('/weather', async (req, res) => {
   try {
-    const url = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%82%BC%EC%84%B1%EB%9D%BC%EC%9D%B4%EC%98%A8%EC%A6%88%ED%8C%8C%ED%81%AC+%EB%82%A0%EC%94%A8';
-    const response = await axios.get(url, { 
-        headers: { 'User-Agent': 'Mozilla/5.0' } 
-    });
+      const url = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%82%BC%EC%84%B1%EB%9D%BC%EC%9D%B4%EC%98%A8%EC%A6%88%ED%8C%8C%ED%81%AC+%EB%82%A0%EC%94%A8';
+      const response = await axios.get(url, { 
+          headers: { 'User-Agent': 'Mozilla/5.0' } 
+      });
 
-    const html = response.data;
-    const $ = cheerio.load(html);
+      const html = response.data;
+      const $ = cheerio.load(html);
 
-    // Initialize an array to hold weather information
-    const weatherData = [];
+      // 시간별 날씨 데이터를 추출
+      const temps = $('div.graph_inner._hourly_weather').text().trim();
+      const words = temps.split(/\s+/); // 공백으로 텍스트를 나누어 단어 배열 생성
 
-    // Select the weather data for the next 8 hours
-    $('div.graph_inner._hourly_weather ul').children().each((i, elem) => {
-        // Extract time
-        const time = $(elem).find('span.cell_time').text().trim();
+      let result = "";
+      let index = 0;
 
-        // Extract temperature
-        const temp = $(elem).find('span.cell_temperature').text().trim();
+      // 시간, 날씨, 온도를 8번 추출 (8개 데이터가 있다고 가정)
+      for (let i = 0; i < 8; i++) {
+          const time = words[index];    // 시간
+          const weather = words[index + 1]; // 날씨
+          const temp = words[index + 2];    // 온도
+          index += 3;
 
-        // Extract weather icon
-        const weatherIconClass = $(elem).find('span.cell_weather').attr('class');
-        let icon = 'cloud.png'; // default
+          result += `${time} ${weather} ${temp}\n`;
+      }
 
-        if (weatherIconClass.includes('ico_sun')) {
-            icon = 'sun.png';
-        } else if (weatherIconClass.includes('ico_cloud')) {
-            icon = 'cloud.png';
-        } else if (weatherIconClass.includes('ico_rain')) {
-            icon = 'rain.png';
-        }
-
-        // Push the weather data for the current hour
-        weatherData.push({
-            time,
-            temp,
-            icon
-        });
-
-        // Only capture the next 8 hours
-        if (i >= 7) return false;
-    });
-
-    res.json(weatherData);
+      res.send(result);
   } catch (error) {
-    res.status(500).send('Error occurred while fetching weather data: ' + error.message);
+      res.status(500).send('Error occurred while fetching weather data: ' + error.message);
   }
 });
+
 
 // 기본 경로에서 index.html 파일을 렌더링합니다.
 app.get('/', (req, res) => {

@@ -19,83 +19,131 @@
     <a href="food.html">식당</a><br>
     <a href="event.html">이벤트</a>
 
+    <!-- Container for the weather forecast -->
+    <div class="weather-section">
+        <h3>시간별 날씨</h3>
+        <div id="weather-forecast" class="weather-forecast">
+            <!-- Weather forecast will be populated by JavaScript -->
+        </div>
+    </div>
 
-        <!-- Container for the weather forecast -->
-        <div class="weather-section">
-            <h3>시간별 날씨</h3>
-            <div class="weather-forecast">
-                <div class="hourly">
-                    <p>16시</p>
-                    <p>34°</p>
-                    <img src="sun.png" alt="sunny">
-                </div>
-                <div class="hourly">
-                    <p>17시</p>
-                    <p>33°</p>
-                    <img src="sun.png" alt="sunny">
-                </div>
-                <div class="hourly">
-                    <p>18시</p>
-                    <p>33°</p>
-                    <img src="sun.png" alt="sunny">
-                </div>
-                <div class="hourly">
-                    <p>19시</p>
-                    <p>32°</p>
-                    <img src="cloud.png" alt="cloudy">
-                </div>
-                <div class="hourly">
-                    <p>20시</p>
-                    <p>31°</p>
-                    <img src="cloud.png" alt="cloudy">
-                </div>
-                <div class="hourly">
-                    <p>21시</p>
-                    <p>30°</p>
-                    <img src="cloud.png" alt="cloudy">
-                </div>
-                <div class="hourly">
-                    <p>22시</p>
-                    <p>29°</p>
-                    <img src="cloud.png" alt="cloudy">
-                </div>
-                <div class="hourly">
-                    <p>23시</p>
-                    <p>28°</p>
-                    <img src="cloud.png" alt="cloudy">
-                </div>
-            </div>
-        </div>
-    
-        <!-- Subway timetable section -->
-        <div class="subway-section">
-            <h3>막차시간(대공원역)</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>문양 방면</th>
-                        <th>영남대 방면</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>첫 차: 23:17</td>
-                        <td>첫 차: 5:59</td>
-                    </tr>
-                    <tr>
-                        <td>막 차: 23:30</td>
-                        <td>막 차: 23:48</td>
-                    </tr>
-                    <tr>
-                        <td>1호선 환승: 23:17 <br>(설화명곡역 까지)</td>
-                        <td>23:06 <br>(안심역까지)</td>
-                    </tr>
-                    <tr>
-                        <td>3호선 환승: 23:17 <br>(칠곡경대병원역)</td>
-                        <td>23:17 <br>(용지역)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <!-- Subway timetable section -->
+    <div class="subway-section">
+        <h3>막차시간(대공원역)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>문양 방면</th>
+                    <th>영남대 방면</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>첫 차: 23:17</td>
+                    <td>첫 차: 5:59</td>
+                </tr> -->
+                <tr>
+                    <td>영남대 > 문양 <br>23:17</td>
+                    <td>문양 > 영남대 <br>23:48</td>
+                </tr>
+                <tr>
+                    <td>영남대 > 이곡 <br>23:30</td>
+                    <td><br></td>
+                </tr>
+                <!-- <tr>
+                    <td>3호선 환승: 23:17 <br>(칠곡경대병원역)</td>
+                    <td>23:17 <br>(용지역)</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        window.onload = function() {
+            getWeatherInfo();
+        };
+
+        function getWeatherInfo() {
+            fetch('/weather')
+                .then(response => response.text())
+                .then(data => {
+                    const weatherInfo = data.trim().split('\n');
+                    const weatherForecastDiv = document.getElementById('weather-forecast');
+
+                    // Iterate through the weather information and populate the weather section
+                    weatherInfo.forEach(info => {
+                        const [time, weather, temp] = info.split(' ');
+
+                        // Create elements for displaying the weather
+                        const hourlyDiv = document.createElement('div');
+                        hourlyDiv.classList.add('hourly');
+
+                        const timeP = document.createElement('p');
+                        timeP.textContent = time;
+
+                        const tempP = document.createElement('p');
+                        tempP.textContent = temp;
+
+                        // Depending on the weather text, assign appropriate image
+                        const weatherImg = document.createElement('img');
+
+                        if (weather.includes('맑음')) {
+                            if (time.includes('내일')) {
+                                weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB01.png';
+                            } else {
+                                const whatTime = Number(time)
+                                if (whatTime > 5 && whatTime < 20) { // 낮이라면
+                                    weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB01.png';
+                                } else { // 밤이라면
+                                    weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB01.png';
+                                }
+                            }
+                        } else if (weather.includes('구름조금')) {
+                            if (time.includes('내일')) {
+                                weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB02_N.png';
+                            } else {
+                                const whatTime = Number(time)
+                                if (whatTime > 5 && whatTime < 20) { // 낮이라면
+                                    weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB02.png';
+                                } else { // 밤이라면
+                                    weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB02_N.png';
+                                }
+                            }
+                        } else if (weather.includes('구름많음')) {
+                            if (time.includes('내일')) {
+                                weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB03_N.png';
+                            } else {
+                                const whatTime = Number(time)
+                                if (whatTime > 5 && whatTime < 20) { // 낮이라면
+                                    weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB03.png';
+                                } else { // 밤이라면
+                                    weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB03_N.png';
+                                }
+                            }
+                        } else if (weather.includes('흐림')) {
+                            weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB04.png'; // cloudy image
+                        } else if (weather.includes('소나기')) {
+                            weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB07.png'; // cloudy image
+                        } else if (weather.includes('비')) {
+                            weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB08.png'; // cloudy image
+                        } else if (weather.includes('눈')) {
+                            weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB11.png'; // cloudy image
+                        } else if (weather.includes('천둥번개')) {
+                            weatherImg.src = 'https://www.weather.go.kr/home/images/icon/NW/NB14.png'; // cloudy image
+                        }
+
+                        // Append time, image, and temperature to the hourly div
+                        hourlyDiv.appendChild(timeP);
+                        hourlyDiv.appendChild(weatherImg);
+                        hourlyDiv.appendChild(tempP);
+
+                        // Append the hourly div to the weather forecast section
+                        weatherForecastDiv.appendChild(hourlyDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
 </body>
 </html>

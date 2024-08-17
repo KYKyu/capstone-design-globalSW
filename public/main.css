@@ -1,7 +1,7 @@
 /* Styles for the main container */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f2f7f2; /* Changed to match the image background */
+    background-color: #ffffff; /* Changed to match the image background */
     color: #333;
     margin: 0;
     padding: 0;
@@ -106,4 +106,3 @@ a {
     border-radius: 10px;
     font-size: 20px;
 }
-
