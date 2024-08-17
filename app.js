@@ -1,14 +1,11 @@
-// index.js
 const express = require('express');
 const path = require('path');
 const app = express();
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-
-// 정적 파일을 제공하기 위해 public 폴더를 사용합니다.
+// Serve static files from the public folder
 app.use(express.static('public'));
-const spawn = require('child_process').spawn;
 
 app.get('/weather', async (req, res) => {
   try {
@@ -19,22 +16,45 @@ app.get('/weather', async (req, res) => {
 
     const html = response.data;
     const $ = cheerio.load(html);
-    
-    const temps = $('div.graph_inner._hourly_weather').text().trim();
-    const words = temps.split(/\s+/); // 공백으로 텍스트를 나누어 단어 배열 생성
-    let result = "";
 
-    let index = 0;
-    for (let i = 0; i < 8; i++) {
-        const weather = words.slice(index, index + 3).join(' '); // 3 단어씩 가져오기
-        index += 3;
-        result += weather + "\n";
-    }
+    // Initialize an array to hold weather information
+    const weatherData = [];
 
-      res.send(result);
-    } catch (error) {
-        res.status(500).send('Error occurred while fetching weather data: ' + error.message);
-    }
+    // Select the weather data for the next 8 hours
+    $('div.graph_inner._hourly_weather ul').children().each((i, elem) => {
+        // Extract time
+        const time = $(elem).find('span.cell_time').text().trim();
+
+        // Extract temperature
+        const temp = $(elem).find('span.cell_temperature').text().trim();
+
+        // Extract weather icon
+        const weatherIconClass = $(elem).find('span.cell_weather').attr('class');
+        let icon = 'cloud.png'; // default
+
+        if (weatherIconClass.includes('ico_sun')) {
+            icon = 'sun.png';
+        } else if (weatherIconClass.includes('ico_cloud')) {
+            icon = 'cloud.png';
+        } else if (weatherIconClass.includes('ico_rain')) {
+            icon = 'rain.png';
+        }
+
+        // Push the weather data for the current hour
+        weatherData.push({
+            time,
+            temp,
+            icon
+        });
+
+        // Only capture the next 8 hours
+        if (i >= 7) return false;
+    });
+
+    res.json(weatherData);
+  } catch (error) {
+    res.status(500).send('Error occurred while fetching weather data: ' + error.message);
+  }
 });
 
 // 기본 경로에서 index.html 파일을 렌더링합니다.
