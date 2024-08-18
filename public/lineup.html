@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>안녕하세요</title>
+    <title>lineup</title>
     <style>
         body {
             display: flex;
@@ -14,7 +14,6 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #ffffff; /* 배경 색상 변경 */
-            position: relative; /* 버튼 위치 조정을 위해 relative 설정 */
         }
         h2 {
             font-size: 4vw; /* 반응형 글씨 크기 */
@@ -80,10 +79,10 @@
 
         .back-button {
             position: absolute;
-            top: 2cm; /* 상단 여백 3cm */
-            left: 20px; /* 왼쪽 여백 */
+            top: 20px;
+            left: 20px;
             padding: 10px 15px;
-            background-color: #006400; /* 짙은 초록색 배경 */
+            background-color: #1c8a1c; /* 짙은 초록색 배경 */
             color: white; /* 흰색 글자 */
             border: none; /* 테두리 제거 */
             border-radius: 25px; /* 둥글게 만들기 */
@@ -92,7 +91,6 @@
             transition: background 0.3s, box-shadow 0.3s; /* 애니메이션 효과 */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
         }
-
         .back-button:hover {
             background-color: #004d00; /* 호버 시 더 어두운 초록색 */
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강도 증가 */
@@ -152,4 +150,4 @@
         }
 
         button.addEventListener('click', () => {
-            currentIndex = (currentIndex < images.length -
+            currentIndex = (currentIndex < images

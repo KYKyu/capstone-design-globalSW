@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>핵스테이크 메뉴</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px; /* 제목과 이미지 사이 여백 추가 */
+            display: flex;
+            align-items: center; /* 수직 정렬 */
+        }
+        .title-image {
+            margin-left: 20px; /* 제목과 이미지 사이의 여백 */
+        }
+        .image-container {
+            display: flex;
+            flex-direction: row; /* 가로 방향으로 배열 */
+            justify-content: space-around; /* 항목 간의 공간을 균등하게 분배 */
+            flex-wrap: wrap; /* 줄 바꿈 허용 */
+            margin-bottom: 20px;
+            width: 100%; /* 전체 너비 사용 */
+            max-width: 800px; /* 최대 너비 제한 */
+        }
+        .image-container > div {
+            text-align: center; /* 이미지와 텍스트 중앙 정렬 */
+            margin: 10px; /* 각 이미지 블록 사이에 여백 추가 */
+        }
+        img {
+            width: 150px; /* 이미지 너비를 150px로 설정 */
+            height: 150px; /* 이미지 높이를 150px로 설정 */
+            object-fit: cover; /* 비율 유지하면서 잘리지 않도록 설정 */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        /* 미디어 쿼리 - 화면 크기가 768px 이하일 때 */
+        @media (max-width: 768px) {
+            img {
+                width: 120px; /* 작은 화면에서 이미지 너비 조정 */
+                height: 120px; /* 작은 화면에서 이미지 높이 조정 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        핵스테이크 메뉴
+    </h1>
+    <div class="image-container">
+      <div>
+        <img src="http://imagefarm.baemin.com/smartmenuimage/upload/image/2022/6/20/lEtwJ9uqoK3yWLFceiNYFLbn3knPJZgnBzZAzVpD5jo=.jpg" alt="허브 순살 치킨">
+          <p>목살슬라이스매콤덮밥 9900원</p>
+      </div>
+      <div>
+        <img src="http://imagefarm.baemin.com/smartmenuimage/image_library/20230705/r_20230705_275.jpg" alt="현준's 땅땅 세트">
+          <p>토시살스테이크덮밥 12500원</p>
+      </div>
+      <div>
+        <img src="http://imagefarm.baemin.com/smartmenuimage/upload/image/2024/5/29/2T6O00OQIpHD6rh2qCiSSwKCxdlrlw-h-XTgr2B8muNkcQI0fLyyAGINlUb5skxsGgzrli0fkmFAL-M1FjdEUA==.jpg" alt="매콤 찹스">
+          <p>부채살 스테이크 17900원</p>
+      </div>
+    </div>
+</body>
+</html>
+
