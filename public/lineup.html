@@ -150,4 +150,18 @@
         }
 
         button.addEventListener('click', () => {
-            currentIndex = (currentIndex < images
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0; // 다음 이미지로 변경
+            showImage(currentIndex);
+            button.textContent = currentIndex === 0 ? '홈팀' : '원정팀'; // 현재 팀에 따라 텍스트 변경
+        });
+
+        button.addEventListener('mouseenter', () => {
+            button.textContent = currentIndex === 0 ? '원정팀' : '홈팀'; // 현재 팀에 따라 텍스트 변경
+        });
+
+        button.addEventListener('mouseleave', () => {
+            button.textContent = currentIndex === 0 ? '홈팀' : '원정팀'; // 기본 텍스트로 복구
+        });
+    </script>
+</body>
+</html>
