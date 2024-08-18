@@ -33,9 +33,9 @@
             flex: 1 1 150px; /* 최소 너비 설정 */
         }
         img {
-            width: 100%; /* 이미지 너비를 100%로 설정 */
-            max-width: 200px; /* 최대 너비 설정 */
-            height: auto;
+            width: 150px; /* 이미지 너비를 150px로 설정 */
+            height: 150px; /* 이미지 높이를 150px로 설정 */
+            object-fit: cover; /* 이미지 비율 유지하며 잘리도록 설정 */
         }
         ul {
             list-style-type: none;
@@ -48,7 +48,7 @@
         /* 미디어 쿼리 - 화면 크기가 768px 이하일 때 */
         @media (max-width: 768px) {
             .image-container > div {
-                flex: 1 1 120px; /* 작은 화면에서 최소 너비 조정 */
+                flex: 1 1 100%; /* 작은 화면에서 세로 방향으로 배열 */
             }
             h1 {
                 font-size: 24px; /* 제목 크기 조정 */
@@ -61,13 +61,14 @@
                 font-size: 20px; /* 제목 크기 조정 */
             }
             img {
-                max-width: 150px; /* 작은 화면에서 이미지 최대 너비 조정 */
+                width: 120px; /* 작은 화면에서 이미지 너비 조정 */
+                height: 120px; /* 작은 화면에서 이미지 높이 조정 */
             }
         }
     </style>
 </head>
 <body>
-    <h1>마이본 메뉴</h1>
+    <h1>마이본 메뉴 </h1>
     <div class="image-container">
       <div>
         <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fthingool123.godohosting.com%2Fdata%2Fgoods%2Feditor%2F220923%2FE_170330.jpg&type=a340" alt="새우닭강정 이미지">
@@ -84,3 +85,5 @@
     </div>
 </body>
 </html>
+
+

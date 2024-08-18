@@ -3,100 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="food.css" type="text/css">
     <title>음식점 메뉴 안내</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            box-sizing: border-box; /* 패딩 포함 크기 조정 */
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px; /* 이미지와 목록 사이 여백 추가 */
-        }
-        .floor-container {
-            display: flex; /* 가로 정렬을 위해 flex 사용 */
-            justify-content: center; /* 중앙 정렬 */
-            width: 100%;
-            flex-wrap: wrap; /* 내용이 넘칠 경우 줄 바꿈 */
-        }
-        .floor {
-            margin: 0 20px; /* 층별 간격 설정 */
-            text-align: center; /* 텍스트 중앙 정렬 */
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0; /* 기본 마진 제거 */
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .cute-button {
-            display: inline-block;
-            font-size: 16px;
-            padding: 10px 20px;
-            background-color: #6bc1ff; /* 배경색 */
-            color: white; /* 글자색 */
-            border: none;
-            border-radius: 20px; /* 둥근 모서리 */
-            text-decoration: none; /* 밑줄 제거 */
-            transition: background-color 0.3s, transform 0.2s; /* 애니메이션 효과 */
-        }
-        .cute-button:hover {
-            background-color: #6bc1ff; /* 호버 시 색 변경 */
-            transform: scale(1.05); /* 호버 시 살짝 커짐 */
-        }
-        button {
-            font-size: 18px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        .team-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: -20px;
-        }
-        .team-container img {
-            width: 90px;
-            height: 68px;
-        }
-        
-        /* 미디어 쿼리 - 화면 크기가 768px 이하일 때 */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px; /* 패딩 줄이기 */
-            }
-            .cute-button {
-                font-size: 14px; /* 버튼 크기 조정 */
-                padding: 8px 16px; /* 버튼 패딩 조정 */
-            }
-        }
-
-        /* 미디어 쿼리 - 화면 크기가 480px 이하일 때 */
-        @media (max-width: 480px) {
-            img {
-                margin-bottom: 15px; /* 이미지와 목록 사이 여백 조정 */
-            }
-            li {
-                font-size: 16px; /* 목록 항목 크기 조정 */
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="team-container">
         <img src="team1_logo.png" alt="Samsung" />
         <h4 class="vs-text">VS</h4>
         <img src="team2_logo.png" alt="kt wiz" />
-    </div>  
+    </div> 
     <!-- 중앙 텍스트 -->
     <h4>대구 삼성 라이온즈 파크</h4>
     <img src="foodLocation.jpg" alt="메뉴 안내 지도">
@@ -106,8 +21,6 @@
             <ul>
                 <li><a class="cute-button" href="bbq.html">BBQ</a></li>
                 <li><a class="cute-button" href="burger-king.html">버거킹</a></li>
-                <li><a class="cute-button" href="the-first.html">디퍼스트</a></li>
-                <li><a class="cute-button" href="cafe-stadium.html">카페스타디움</a></li>
             </ul>
         </div>
         <div class="floor">
@@ -118,7 +31,6 @@
                 <li><a class="cute-button" href="tom-n-toms.html">탐앤탐스</a></li>
                 <li><a class="cute-button" href="hexa-steak.html">핵스테이크</a></li>
                 <li><a class="cute-button" href="my-bone.html">마이본</a></li>
-                <li><a class="cute-button" href="the-first.html">디퍼스트</a></li>
                 <li><a class="cute-button" href="real-kitchen-the-hong.html">리얼키친더홍</a></li>
                 <li><a class="cute-button" href="papa-johns.html">파파존스</a></li>
                 <li><a class="cute-button" href="jaws-tteokbokki.html">죠스떡볶이</a></li>
