@@ -16,8 +16,8 @@
         }
 
         .container {
-             text-align: center;
-             padding-top: 30px;
+            text-align: center;
+            padding-top: 30px;
         }
 
         .team-container {
@@ -150,6 +150,10 @@
         <!--  첫 번째 캐러셀 -->
         <div class="carousel_main">
             <div class="carousel_wrapper">
+                <!-- 슬라이드 앞에 마지막 슬라이드 복사 -->
+                <div class="carousel_slide">
+                    <img src="event5.jpg" alt="Event 5" />
+                </div>
                 <div class="carousel_slide">
                     <img src="event1.jpg" alt="Event 1" />
                 </div>
@@ -164,6 +168,10 @@
                 </div>
                 <div class="carousel_slide">
                     <img src="event5.jpg" alt="Event 5" />
+                </div>
+                <!-- 슬라이드 뒤에 첫 번째 슬라이드 복사 -->
+                <div class="carousel_slide">
+                    <img src="event1.jpg" alt="Event 1" />
                 </div>
             </div>
 
@@ -206,133 +214,148 @@
         </div>
     </div>
 
-        <!-- SAMSUNG Lions 텍스트 -->
-        <h1 style="margin-top: 100px;">SAMSUNG Lions</h1>
+    <!-- SAMSUNG Lions 텍스트 -->
+    <h1 style="margin-top: 100px;">SAMSUNG Lions</h1>
 
-        <!-- 두 번째 캐러셀 -->
-        <div class="carousel_main">
-            <div class="carousel_wrapper">
-                <div class="carousel_slide">
-                    <img src="_event1.jpg" alt="_event1" />
-                </div>
-                <div class="carousel_slide">
-                    <img src="_event2.jpg" alt="_event2" />
-                </div>
-                <div class="carousel_slide">
-                    <img src="_event3.jpg" alt="_event3" />
-                </div>
-                <div class="carousel_slide">
-                    <img src="_event4.jpg" alt="_event4" />
-                </div>
+    <!-- 두 번째 캐러셀 -->
+    <div class="carousel_main">
+        <div class="carousel_wrapper">
+            <!-- 슬라이드 앞에 마지막 슬라이드 복사 -->
+            <div class="carousel_slide">
+                <img src="_event4.jpg" alt="_event4" />
+            </div>
+            <div class="carousel_slide">
+                <img src="_event1.jpg" alt="_event1" />
+            </div>
+            <div class="carousel_slide">
+                <img src="_event2.jpg" alt="_event2" />
+            </div>
+            <div class="carousel_slide">
+                <img src="_event3.jpg" alt="_event3" />
+            </div>
+            <div class="carousel_slide">
+                <img src="_event4.jpg" alt="_event4" />
             </div>
 
-            <!-- 캐러셀 사이드 버튼 -->
-            <div class="carousel_button_container">
-                <button type="button" class="carousel_prev">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                        <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                    </svg>
-                </button>
-                <button type="button" class="carousel_next">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
-                        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                </button>
+            <!-- 슬라이드 뒤에 첫 번째 슬라이드 복사 -->
+            <div class="carousel_slide">
+                <img src="_event1.jpg" alt="_event1" />
             </div>
-
-            <!-- 캐러셀 중앙 버튼 -->
-            <div class="carousel_pagination">
-                <div class="carousel_circle"></div>
-                <div class="carousel_circle"></div>
-                <div class="carousel_circle"></div>
-                <div class="carousel_circle"></div>
-            </div>
-
-                    <!-- 삼성 이벤트 정보 -->
-        <div class="_event-info">
-            <p>일정 : 2024.7.27(토)</p>
-            <p>선수 사인회, 포토타임 이벤트 : 1루 땅땅치킨 앞</p>
-            <p>포토카드 & 장미꽃 증정 이벤트 : 라팍 광장 내 heROSE 부스</p>
         </div>
 
+        <!-- 캐러셀 사이드 버튼 -->
+        <div class="carousel_button_container">
+            <button type="button" class="carousel_prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </button>
+            <button type="button" class="carousel_next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </button>
+        </div>
 
+        <!-- 캐러셀 중앙 버튼 -->
+        <div class="carousel_pagination">
+            <div class="carousel_circle"></div>
+            <div class="carousel_circle"></div>
+            <div class="carousel_circle"></div>
+            <div class="carousel_circle"></div>
+            <div class="carousel_circle"></div>
         </div>
     </div>
 
+
+    <!-- 삼성 이벤트 정보 -->
+    <div class="_event-info">
+        <p>일정 : 2024.7.27(토)</p>
+        <p>선수 사인회, 포토타임 이벤트 : 1루 땅땅치킨 앞</p>
+        <p>포토카드 & 장미꽃 증정 이벤트 : 라팍 광장 내 heROSE 부스</p>
+    </div>
+    
+    <!-- 스크립트 부분 -->
     <script>
-        const slides = document.querySelectorAll('.carousel_slide');
-        const prevButton = document.querySelector('.carousel_prev');
-        const nextButton = document.querySelector('.carousel_next');
-        const paginationCircles = document.querySelectorAll('.carousel_circle');
-        let currentIndex = 0;
+        document.addEventListener('DOMContentLoaded', function () {
+            var carousels = document.querySelectorAll('.carousel_main');
 
-        function updateCarousel(index) {
-            const totalSlides = slides.length;
-            const newTransformValue = `translateX(-${index * 100}%)`;
-            document.querySelector('.carousel_wrapper').style.transform = newTransformValue;
+            carousels.forEach(function(carousel) {
+                var carouselWrapper = carousel.querySelector('.carousel_wrapper');
+                var slides = carousel.querySelectorAll('.carousel_slide');
+                var totalSlides = slides.length;
+                var slideWidth = slides[0].clientWidth;
+                var currentIndex = 1;
+                var prevButton = carousel.querySelector('.carousel_prev');
+                var nextButton = carousel.querySelector('.carousel_next');
+                var circles = carousel.querySelectorAll('.carousel_circle');
+                var isTransitioning = false;
 
-            paginationCircles.forEach((circle, i) => {
-                circle.classList.toggle('active', i === index);
+                // 초기 위치 설정
+                carouselWrapper.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+
+                // 슬라이드 이동 함수
+                function goToSlide(index) {
+                    isTransitioning = true;
+                    carouselWrapper.style.transition = 'transform 0.5s ease-in-out';
+                    carouselWrapper.style.transform = `translateX(${-slideWidth * index}px)`;
+
+                    currentIndex = index;
+
+                    if (currentIndex === 0) {
+                        setTimeout(() => {
+                            carouselWrapper.style.transition = 'none';
+                            currentIndex = totalSlides - 2;
+                            carouselWrapper.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+                            isTransitioning = false;
+                        }, 500);
+                    } else if (currentIndex === totalSlides - 1) {
+                        setTimeout(() => {
+                            carouselWrapper.style.transition = 'none';
+                            currentIndex = 1;
+                            carouselWrapper.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+                            isTransitioning = false;
+                        }, 500);
+                    } else {
+                        isTransitioning = false;
+                    }
+
+                    updatePagination();
+                }
+
+                // 이전 버튼 클릭 이벤트
+                prevButton.addEventListener('click', function () {
+                    if (!isTransitioning) {
+                        goToSlide(currentIndex - 1);
+                    }
+                });
+
+                // 다음 버튼 클릭 이벤트
+                nextButton.addEventListener('click', function () {
+                    if (!isTransitioning) {
+                        goToSlide(currentIndex + 1);
+                    }
+                });
+
+                // 페이지네이션 업데이트
+                function updatePagination() {
+                    circles.forEach(circle => circle.classList.remove('active'));
+                    circles[(currentIndex - 1 + circles.length) % circles.length].classList.add('active');
+                }
+
+                // 페이지네이션 클릭 이벤트
+                circles.forEach((circle, index) => {
+                    circle.addEventListener('click', function () {
+                        goToSlide(index + 1);
+                    });
+                });
+
+                // 초기 페이지네이션 설정
+                updatePagination();
             });
-        }
-
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateCarousel(currentIndex);
         });
-
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateCarousel(currentIndex);
-        });
-
-        paginationCircles.forEach((circle, index) => {
-            circle.addEventListener('click', () => {
-                currentIndex = index;
-                updateCarousel(currentIndex);
-            });
-        });
-
-        updateCarousel(currentIndex); // 초기화
-
-        // 두 번째 캐러셀에 대한 스크립트
-        const slides2 = document.querySelectorAll('.carousel_main:last-of-type .carousel_slide');
-        const prevButton2 = document.querySelector('.carousel_main:last-of-type .carousel_prev');
-        const nextButton2 = document.querySelector('.carousel_main:last-of-type .carousel_next');
-        const paginationCircles2 = document.querySelectorAll('.carousel_main:last-of-type .carousel_circle');
-
-        let currentIndex2 = 0;
-
-        function updateCarousel2(index) {
-            const totalSlides2 = slides2.length;
-            const newTransformValue2 = `translateX(-${index * 100}%)`;
-            document.querySelector('.carousel_main:last-of-type .carousel_wrapper').style.transform = newTransformValue2;
-
-            paginationCircles2.forEach((circle, i) => {
-                circle.classList.toggle('active', i === index);
-            });
-        }
-
-        prevButton2.addEventListener('click', () => {
-            currentIndex2 = (currentIndex2 - 1 + slides2.length) % slides2.length;
-            updateCarousel2(currentIndex2);
-        });
-
-        nextButton2.addEventListener('click', () => {
-            currentIndex2 = (currentIndex2 + 1) % slides2.length;
-            updateCarousel2(currentIndex2);
-        });
-
-        paginationCircles2.forEach((circle, index) => {
-            circle.addEventListener('click', () => {
-                currentIndex2 = index;
-                updateCarousel2(currentIndex2);
-            });
-        });
-
-        updateCarousel2(currentIndex2); // 초기화
     </script>
 </body>
 </html>

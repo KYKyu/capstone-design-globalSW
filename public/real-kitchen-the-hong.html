@@ -11,55 +11,60 @@
             align-items: center;
             margin: 0;
             font-family: Arial, sans-serif;
-            padding: 20px; /* 패딩 추가 */
-            box-sizing: border-box; /* 패딩 포함 크기 조정 */
+            padding: 20px;
+            box-sizing: border-box;
         }
         h1 {
-            text-align: center; /* 제목 중앙 정렬 */
-            margin-bottom: 20px; /* 제목과 이미지 사이 여백 추가 */
+            display: flex; /* Flexbox 사용 */
+            align-items: center; /* 수직 중앙 정렬 */
+            justify-content: center; /* 수평 중앙 정렬 */
+            margin-bottom: 40px; 
+        }
+        .title-image {
+            margin-left: 10px; /* 제목과 이미지 간의 간격 조정 */
         }
         .image-container {
             display: flex;
-            flex-direction: row; /* 가로 방향으로 배열 */
-            justify-content: space-around; /* 항목 간의 공간을 균등하게 분배 */
-            flex-wrap: wrap; /* 줄 바꿈 허용 */
+            flex-direction: row; 
+            justify-content: space-around; 
+            flex-wrap: wrap; 
             margin-bottom: 20px;
-            width: 100%; /* 전체 너비 사용 */
-            max-width: 800px; /* 최대 너비 제한 */
+            width: 100%; 
+            max-width: 800px; 
         }
         .image-container > div {
-            text-align: center; /* 이미지와 텍스트 중앙 정렬 */
-            margin: 10px; /* 각 이미지 블록 사이에 여백 추가 */
-            flex: 1 1 150px; /* 최소 너비 설정 */
+            text-align: center; 
+            margin: 10px; 
+            flex: 1 1 150px; 
         }
         img {
-            width: 100%; /* 이미지 너비를 100%로 설정 */
-            max-width: 200px; /* 최대 너비 설정 */
-            height: auto;
+            width: 150px; 
+            height: 150px; 
+            object-fit: cover; 
         }
-        /* 미디어 쿼리 - 화면 크기가 768px 이하일 때 */
         @media (max-width: 768px) {
             .image-container > div {
-                flex: 1 1 120px; /* 작은 화면에서 최소 너비 조정 */
+                flex: 1 1 100px; 
             }
             h1 {
-                font-size: 24px; /* 제목 크기 조정 */
+                font-size: 24px; 
             }
         }
-
-        /* 미디어 쿼리 - 화면 크기가 480px 이하일 때 */
         @media (max-width: 480px) {
             h1 {
-                font-size: 20px; /* 제목 크기 조정 */
+                font-size: 20px; 
             }
             img {
-                max-width: 150px; /* 작은 화면에서 이미지 최대 너비 조정 */
+                width: 120px; 
+                height: 120px; 
             }
         }
     </style>
 </head>
 <body>
-    <h1>리얼키친더홍 메뉴</h1>
+    <h1>리얼키친더홍 메뉴 
+        <img class="title-image" src="https://search.pstatic.net/sunny/?src=http%3A%2F%2Fcoresos.phinf.naver.net%2Fa%2F2gj0f5_4%2F95hUd0151wdsl6vvosj1d_8qkh5v.jpg&type=a340" alt="이미지" width="100" height="50">
+    </h1>
     <div class="image-container">
       <div>
         <img src="https://ldb-phinf.pstatic.net/20230915_105/16947770548771x7tv_JPEG/KakaoTalk_20230915_155555392_01.jpg" alt="대세닭 세트 이미지">
@@ -76,3 +81,4 @@
     </div>
 </body>
 </html>
+
