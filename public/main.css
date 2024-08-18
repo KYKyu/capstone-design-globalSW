@@ -1,7 +1,7 @@
 /* Styles for the main container */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
+    background-color: #ffffff; /* Changed to match the image background */
     color: #333;
     margin: 0;
     padding: 0;
@@ -10,19 +10,87 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+h3 {
+    background-color: #d3e2ce; /* Matches header background color */
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    width: 320px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.weather-section, .subway-section {
+    background-color: #eff2ea; /* Light green background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    width: 340px;
+}
+
+.weather-forecast {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.hourly {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hourly p {
+    margin: 2px;
+    font-size: 14px;
+}
+
+.weather-forecast img {
+    width: 30px;
+    height: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #f2f7f2; /* Matches the table header background */
+}
+
+td:last-child {
+    border-right: none;
+}
+
 .team-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: -20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
+
 .team-container img {
     width: 90px;
     height: 68px;
 }
-/* Styles for the main heading */
-h1 {
-    display: none; /* Hides the main page heading */
+
+.vs-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 15px;
 }
 
 /* Styles for the buttons */
@@ -37,53 +105,4 @@ a {
     text-decoration: none;
     border-radius: 10px;
     font-size: 20px;
-}
-
-/* Style for weather and subway information sections */
-#subwayInfo, #weatherInfo {
-    background-color: #c5c6b6;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    text-align: center;
-    width: 320px;
-}
-
-/* Weather information specifics */
-#weatherInfo {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-/* Styles for the subway timetable */
-#subwayInfo p {
-    margin: 0;
-    padding: 5px 0;
-    font-size: 14px;
-}
-
-/* Weather forecast styling */
-.weather {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.weather img {
-    width: 30px;
-    height: 30px;
-}
-
-.weather p {
-    margin: 0;
-    font-size: 14px;
-}
-
-/* Additional custom styles */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
