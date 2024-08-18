@@ -15,22 +15,29 @@
             font-family: Arial, sans-serif;
             background-color: #ffffff; /* 배경 색상 변경 */
         }
-        h1 {
+        h2 {
             font-size: 4vw; /* 반응형 글씨 크기 */
             margin-bottom: 10px; /* 제목과 이미지 간격 조정 */
         }
-        .logo-container {
+        .container {
+            text-align: center;
+            padding-top: 0; /* 위 여백 줄임 */
+        }
+        .team-container {
             display: flex;
-            align-items: center; /* 중앙 정렬 */
-            margin-bottom: 10px; /* 로고와 제목 간격 조정 */
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px; /* 아래 여백 조정 */
         }
-        .team-logo {
-            width: 100px; /* 로고 크기 조정 */
-            margin: 0 10px; /* 로고 간격 조정 */
+        
+        .team-container img {
+            width: 90px;
+            height: 68px;
         }
-        .vs {
-            font-size: 2vw; /* vs 텍스트 크기 조정 */
-            margin: 0 10px; /* vs 텍스트 간격 조정 */
+        .vs-text {
+            margin: 0 20px;
+            font-size: 24px;
+            font-weight: bold;
         }
         .image-container {
             position: relative;
@@ -72,7 +79,7 @@
 
         /* 미디어 쿼리 */
         @media (max-width: 600px) {
-            h1 {
+            h2 {
                 font-size: 6vw; /* 작은 화면에서 제목 크기 조정 */
             }
             .button {
@@ -85,24 +92,29 @@
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <img src="team1_logo.png" alt="팀 1 로고" class="team-logo">
-        <span class="vs">vs</span>
-        <img src="team2_logo.png" alt="팀 2 로고" class="team-logo">
+    <div class="container">
+        <!-- 상단 중앙 이미지와 VS 텍스트 -->
+        <div class="team-container">
+            <img src="team1_logo.png" alt="Samsung" />
+            <h4 class="vs-text">VS</h4>
+            <img src="team2_logo.png" alt="kt wiz" />
+        </div>  
+        <!-- 중앙 텍스트 -->
+        <h4>대구 삼성 라이온즈 파크</h4>
     </div>
-    <h4 style="margin-top: -20px;">대구 삼성 라이온즈 파크</h4>
-    <h2>라인업</h2>
+
     <div class="image-container">
         <img src="team1.jpg" alt="팀 1" class="team-image active" id="image1">
         <img src="team2.jpg" alt="팀 2" class="team-image" id="image2">
     </div>
     <div>
-        <button class="button" id="opponentButton">상대팀</button>
+        <button class="button" id="opponentButton">홈팀</button> <!-- 초기 텍스트를 '홈팀'으로 설정 -->
     </div>
 
     <script>
         const images = document.querySelectorAll('.team-image');
         let currentIndex = 0;
+        const button = document.getElementById('opponentButton');
 
         function showImage(index) {
             images.forEach((img, i) => {
@@ -113,9 +125,18 @@
             });
         }
 
-        document.getElementById('opponentButton').addEventListener('click', () => {
+        button.addEventListener('click', () => {
             currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0; // 다음 이미지로 변경
             showImage(currentIndex);
+            button.textContent = currentIndex === 0 ? '홈팀' : '원정팀'; // 현재 팀에 따라 텍스트 변경
+        });
+
+        button.addEventListener('mouseenter', () => {
+            button.textContent = currentIndex === 0 ? '원정팀' : '홈팀'; // 현재 팀에 따라 텍스트 변경
+        });
+
+        button.addEventListener('mouseleave', () => {
+            button.textContent = currentIndex === 0 ? '홈팀' : '원정팀'; // 기본 텍스트로 복구
         });
     </script>
 </body>

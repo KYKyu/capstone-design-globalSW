@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로라방앗간 메뉴</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px; /* 제목과 이미지 사이 여백 추가 */
+            display: flex;
+            align-items: center; /* 수직 정렬 */
+        }
+        .title-image {
+            margin-left: 20px; /* 제목과 이미지 사이의 여백 */
+        }
+        .image-container {
+            display: flex;
+            flex-direction: row; /* 가로 방향으로 배열 */
+            justify-content: space-around; /* 항목 간의 공간을 균등하게 분배 */
+            flex-wrap: wrap; /* 줄 바꿈 허용 */
+            margin-bottom: 20px;
+            width: 100%; /* 전체 너비 사용 */
+            max-width: 800px; /* 최대 너비 제한 */
+        }
+        .image-container > div {
+            text-align: center; /* 이미지와 텍스트 중앙 정렬 */
+            margin: 10px; /* 각 이미지 블록 사이에 여백 추가 */
+        }
+        img {
+            width: 150px; /* 이미지 너비를 150px로 설정 */
+            height: 150px; /* 이미지 높이를 150px로 설정 */
+            object-fit: cover; /* 비율 유지하면서 잘리지 않도록 설정 */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        /* 미디어 쿼리 - 화면 크기가 768px 이하일 때 */
+        @media (max-width: 768px) {
+            img {
+                width: 120px; /* 작은 화면에서 이미지 너비 조정 */
+                height: 120px; /* 작은 화면에서 이미지 높이 조정 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        로라방앗간 메뉴
+        <img class="title-image" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA2MDhfNjkg%2FMDAxNTU5OTUwNzAyNzg0.xgEbcj1UPllV4mRVDAPqvj_p2XIXF1-2Wiwk9aRl7a0g.I7FKdX5bLcyXNreDexzrWV45VR5_B8MlSb-gypjYK5gg.PNG.myskyjong123%2Fs7_brand.png&type=a340" alt="BBQ 로고" width="100" height="100">
+    </h1>
+    <div class="image-container">
+      <div>
+        <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA4MjlfMjg5%2FMDAxNjYxNzUzMzM1MzE0.ORQId0l4OgTTXeqCgh5-mk-2h5i307gVAFKHxIA-kbUg.Cri4TyCtMnH-76Kkld1uzVLRzKvfkRXWl28hejQnu0og.JPEG%2F1661609099704.jpg%3Ftype%3Dw1500_60_sharpen" alt="허브 순살 치킨">
+          <p>만루홈런세트 12000원</p>
+      </div>
+      <div>
+        <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA4MTFfMjYx%2FMDAxNjYwMTkzMDYwMzc5.2DdS5SbTWwj1XSjTTc0oqC-9A8kZfFByz92HtGXDIfMg.IwEb1Jy-ut6QjegDL1fP0qEMPplTe-dSvRpA0l3vj2Eg.JPEG%2Fupload_eb14a5c63b876beb4b880198822cf809.jpg%3Ftype%3Dw1500_60_sharpen" alt="현준's 땅땅 세트">
+          <p>옛날팥빙수 5000원</p>
+      </div>
+      <div>
+        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA4MTBfMjA3%2FMDAxNjI4NjA0NzUyMjM5.l2Cij87kryIPDwkSZluB5x-L4jDHNyRG_nFoIaCuYTcg.747KoPhcxr-kT2mdK4WTuCLe3IW8yd8UrkxE-RN4VG8g.JPEG.yujung7898%2Foutput_2946229560.jpg&type=a340" alt="매콤 찹스">
+          <p>납작만두 3500원</p>
+      </div>
+    </div>
+</body>
+</html>
