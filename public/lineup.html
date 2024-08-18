@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lineup</title>
+    <title>안녕하세요</title>
     <style>
         body {
             display: flex;
@@ -72,17 +72,12 @@
             color: white; /* 호버 시 글자색 흰색 */
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강도 증가 */
         }
-        .subtitle {
-            font-size: 1.5vw; /* 부제목 크기 조정 */
-            margin: 10px 0; /* 제목과 부제목 간격 조정 */
-        }
-
         .back-button {
             position: absolute;
             top: 20px;
             left: 20px;
             padding: 10px 15px;
-            background-color: #1c8a1c; /* 짙은 초록색 배경 */
+            background-color: #383737; /* 회색 배경 */
             color: white; /* 흰색 글자 */
             border: none; /* 테두리 제거 */
             border-radius: 25px; /* 둥글게 만들기 */
@@ -92,8 +87,12 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
         }
         .back-button:hover {
-            background-color: #004d00; /* 호버 시 더 어두운 초록색 */
+            background-color: #606060; /* 호버 시 어두운 회색 */
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강도 증가 */
+        }
+        .subtitle {
+            font-size: 1.5vw; /* 부제목 크기 조정 */
+            margin: 10px 0; /* 제목과 부제목 간격 조정 */
         }
 
         /* 미디어 쿼리 */
@@ -107,13 +106,12 @@
             .subtitle {
                 font-size: 3vw; /* 작은 화면에서 부제목 크기 조정 */
             }
-            .back-button {
-                font-size: 3vw; /* 작은 화면에서 되돌리기 버튼 글씨 크기 조정 */
-            }
         }
     </style>
 </head>
 <body>
+    <button class="back-button" onclick="location.href='main.html'">&lt; </button> <!-- 회색 배경 버튼 추가 -->
+    
     <div class="container">
         <!-- 상단 중앙 이미지와 VS 텍스트 -->
         <div class="team-container">
@@ -133,8 +131,6 @@
         <button class="button" id="opponentButton">홈팀</button> <!-- 초기 텍스트를 '홈팀'으로 설정 -->
     </div>
 
-    <button class="back-button" onclick="location.href='main.html'">&lt;</button> <!-- 되돌리기 버튼 추가 -->
-
     <script>
         const images = document.querySelectorAll('.team-image');
         let currentIndex = 0;
@@ -152,7 +148,8 @@
         button.addEventListener('click', () => {
             currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0; // 다음 이미지로 변경
             showImage(currentIndex);
-            button.textContent = currentIndex === 0 ? '홈팀' : '원정팀'; // 현재 팀에 따라 텍스트 변경
+            button.textContent = currentIndex === 0 ? '홈팀' : '원정팀'; // 현재 팀에
+                        button.textContent = currentIndex === 0 ? '홈팀' : '원정팀'; // 현재 팀에 따라 텍스트 변경
         });
 
         button.addEventListener('mouseenter', () => {
@@ -165,3 +162,4 @@
     </script>
 </body>
 </html>
+
