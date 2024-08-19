@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdminPage</title>
+  <title>Firebase Admin Panel</title>
 </head>
 <body>
-  <h1>디지털 경기장 매니저 관리자 모드</h1>
-  <h3>라인업 이미지 경로 변경</h3>
+  <h1>Update Image Paths</h1>
+
   <div>
     <label for="team1Path">Team 1 Image Path:</label>
     <input type="text" id="team1Path" placeholder="Enter new image path for Team 1">
@@ -25,7 +25,13 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
   <script>
-    // Your web app's Firebase configuration
+    // Check if the user is logged in
+    if (!window.localStorage.getItem('loggedIn')) {
+      alert('You must log in first!');
+      window.location.href = 'login.html'; // Redirect to login page
+    }
+
+    // Firebase Configuration
     const firebaseConfig = {
       apiKey: "AIzaSyDsot1H1cAD02oWrswIMm5rNkvV4xxuGDM",
       authDomain: "capstone-design-global-sw.firebaseapp.com",

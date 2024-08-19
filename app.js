@@ -93,10 +93,6 @@ app.get('/lineup', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'lineup.html'));
 });
 
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
-});
-
 // 서버를 포트 3000에서 실행합니다.
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
