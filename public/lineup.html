@@ -3,117 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>안녕하세요</title>
-    <style>
-        body {
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        h2 {
-            font-size: 4vw; /* 반응형 글씨 크기 */
-            margin-bottom: 10px; /* 제목과 이미지 간격 조정 */
-        }
-
-        h4{
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-
-        
-        .container {
-            text-align: center;
-            padding-top: 20px; /* 위 여백 줄임 */
-        }
-        .team-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 6px; /* 아래 여백 조정 */
-        }
-        
-        .team-container img {
-            width: 90px;
-            height: 68px;
-        }
-        .vs-text {
-            margin: 0 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .image-container {
-            position: relative;
-            width: 100%; /* 화면 크기에 맞춤 */
-            height: 80vh; /* 화면의 80% 높이로 설정 */
-            overflow: hidden;
-            margin-bottom: 10px; /* 이미지와 버튼 간격 조정 */
-        }
-        .team-image {
-            width: 100%;
-            height: 100%;
-            display: none; /* 기본적으로 숨김 */
-            object-fit: contain; /* 이미지 비율 유지하면서 컨테이너에 맞춤 */
-        }
-        .active {
-            display: block; /* 활성화된 이미지만 표시 */
-        }
-        .button {
-            margin: 10px;
-            padding: 10px 20px; /* 패딩을 조정하여 넓은 버튼으로 */
-            background-color: white; /* 흰색 배경 */
-            color: black; /* 검정색 글자 */
-            border: 2px solid black; /* 검정색 원 테두리 */
-            border-radius: 25px; /* 둥글게 만들기 */
-            cursor: pointer;
-            font-size: 2vw; /* 반응형 글씨 크기 */
-            transition: background 0.3s, color 0.3s, box-shadow 0.3s; /* 애니메이션 효과 */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
-        }
-        .button:hover {
-            background-color: black; /* 호버 시 배경색 검정 */
-            color: white; /* 호버 시 글자색 흰색 */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강도 증가 */
-        }
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 10px 15px;
-            background-color: #383737; /* 회색 배경 */
-            color: white; /* 흰색 글자 */
-            border: none; /* 테두리 제거 */
-            border-radius: 25px; /* 둥글게 만들기 */
-            cursor: pointer;
-            font-size: 2vw; /* 반응형 글씨 크기 */
-            transition: background 0.3s, box-shadow 0.3s; /* 애니메이션 효과 */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
-        }
-        .back-button:hover {
-            background-color: #606060; /* 호버 시 어두운 회색 */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* 호버 시 그림자 강도 증가 */
-        }
-        .subtitle {
-            font-size: 1.5vw; /* 부제목 크기 조정 */
-            margin: 10px 0; /* 제목과 부제목 간격 조정 */
-        }
-
-        /* 미디어 쿼리 */
-        @media (max-width: 600px) {
-            h2 {
-                font-size: 6vw; /* 작은 화면에서 제목 크기 조정 */
-            }
-            .button {
-                font-size: 4vw; /* 작은 화면에서 버튼 글씨 크기 조정 */
-            }
-            .subtitle {
-                font-size: 3vw; /* 작은 화면에서 부제목 크기 조정 */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/css/lineup.css" type="text/css">
+    <title>lineup</title>
 </head>
 <body>
     <button class="back-button" onclick="location.href='main.html'">&lt; </button> <!-- 회색 배경 버튼 추가 -->
@@ -121,17 +12,17 @@
     <div class="container">
         <!-- 상단 중앙 이미지와 VS 텍스트 -->
         <div class="team-container">
-            <img src="team1_logo.png" alt="Samsung" />
+            <img src="/Image/team1_logo.png" alt="Samsung" />
             <h4 class="vs-text">VS</h4>
-            <img src="team2_logo.png" alt="kt wiz" />
+            <img src="/Image/team2_logo.png" alt="kt wiz" />
         </div>  
         <!-- 중앙 텍스트 -->
         <h4>대구 삼성 라이온즈 파크</h4>
     </div>
 
     <div class="image-container">
-        <img src="team1.jpg" alt="팀 1" class="team-image active" id="image1">
-        <img src="team2.jpg" alt="팀 2" class="team-image" id="image2">
+        <img src="./Image/team1.jpg" alt="팀 1" class="team-image active" id="image1">
+        <img src="./Image/team2.jpg" alt="팀 2" class="team-image" id="image2">
     </div>
     <div>
         <button class="button" id="opponentButton">홈팀</button> <!-- 초기 텍스트를 '홈팀'으로 설정 -->
@@ -142,6 +33,22 @@
         let currentIndex = 0;
         const button = document.getElementById('opponentButton');
 
+        // Firebase로부터 이미지 경로 가져오기
+        async function fetchImageUrls() {
+            try {
+                const response = await fetch('/api/images');
+                const data = await response.json();
+
+                // team1과 team2 이미지 URL 설정
+                document.getElementById('image1').src = data.team1;
+                document.getElementById('image2').src = data.team2;
+            } catch (error) {
+                console.error('Error fetching image URLs:', error);
+            }
+        }
+
+        fetchImageUrls(); // 페이지 로드 시 이미지 경로 설정
+        
         function showImage(index) {
             images.forEach((img, i) => {
                 img.classList.remove('active');
@@ -168,4 +75,3 @@
     </script>
 </body>
 </html>
-
