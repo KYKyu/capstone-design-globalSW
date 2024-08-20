@@ -68,11 +68,11 @@
     // Function to update Team 2 Image Path
     function updateTeam2Path() {
       const team2Path = document.getElementById('team2Path').value;
-
+      const alertt = window.localStorage.getItem('loggedIn')
       if (team2Path) {
         database.ref('imagePath/team2').set(team2Path)
           .then(() => {
-            alert('Team 2 image path updated successfully!');
+            alert('Team 2 image path updated successfully!' + alertt);
           })
           .catch((error) => {
             console.error('Error updating Team 2 image path:', error);
