@@ -1,3 +1,22 @@
+// Firebase 관련 모듈 임포트 및 초기화
+const { initializeApp } = require('firebase/app');
+const { getDatabase, ref, get } = require('firebase/database');
+
+// Firebase 프로젝트 설정 정보
+const firebaseConfig = {
+  apiKey: "AIzaSyDsot1H1cAD02oWrswIMm5rNkvV4xxuGDM",
+  authDomain: "capstone-design-global-sw.firebaseapp.com",
+  projectId: "capstone-design-global-sw",
+  storageBucket: "capstone-design-global-sw.appspot.com",
+  messagingSenderId: "686741692448",
+  appId: "1:686741692448:web:c812564389ed1ccaf31c45"
+};
+
+// Firebase 초기화
+const firebaseApp = initializeApp(firebaseConfig);
+// Realtime Database 초기화
+const database = getDatabase(firebaseApp);
+
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -6,6 +25,22 @@ const cheerio = require('cheerio');
 
 // Serve static files from the public folder
 app.use(express.static('public'));
+
+// 이미지 경로를 가져오는 API
+app.get('/api/images', async (req, res) => {
+  try {
+    const dbRef = ref(database, 'imagePath');
+    const snapshot = await get(dbRef);
+
+    if (snapshot.exists()) {
+      res.json(snapshot.val());
+    } else {
+      res.status(404).send('No data available');
+    }
+  } catch (error) {
+    res.status(500).send('Error occurred while fetching image data: ' + error.message);
+  }
+});
 
 app.get('/weather', async (req, res) => {
   try {

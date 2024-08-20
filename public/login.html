@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <h1>Login to Admin Panel</h1>
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter your username">
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter your password">
+  </div>
+
+  <button onclick="login()">Login</button>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <script>
+    // Firebase Configuration
+    window.localStorage.clear()
+    const firebaseConfig = {
+        apiKey: "AIzaSyDsot1H1cAD02oWrswIMm5rNkvV4xxuGDM",
+        authDomain: "capstone-design-global-sw.firebaseapp.com",
+        databaseURL: "https://capstone-design-global-sw-default-rtdb.firebaseio.com",
+        projectId: "capstone-design-global-sw",
+        storageBucket: "capstone-design-global-sw.appspot.com",
+        messagingSenderId: "686741692448",
+        appId: "1:686741692448:web:c812564389ed1ccaf31c45"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // Login Function
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username && password) {
+        // Check credentials in Firebase Realtime Database
+        const userRef = database.ref('User');
+
+        userRef.child('id').once('value').then(snapshot => {
+          const dbUsername = snapshot.val();
+          return userRef.child('password').once('value').then(snapshot => {
+            const dbPassword = snapshot.val();
+            
+            if (dbUsername === username && dbPassword === password) {
+              alert('Login successful!');
+              // Redirect to admin.html
+              window.location.href = 'admin.html';
+              window.localStorage.setItem('loggedIn', 'login success')
+            } else {
+              alert('Invalid username or password');
+            }
+          });
+        }).catch(error => {
+          console.error('Error fetching user data:', error);
+        });
+      } else {
+        alert('Please enter both username and password.');
+      }
+    }
+  </script>
+</body>
+</html>

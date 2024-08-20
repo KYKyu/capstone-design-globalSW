@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Admin Panel</title>
+</head>
+<body>
+  <h1>Update Image Paths</h1>
+
+  <div>
+    <label for="team1Path">Team 1 Image Path:</label>
+    <input type="text" id="team1Path" placeholder="Enter new image path for Team 1">
+    <button onclick="updateTeam1Path()">Update Team 1 Path</button>
+  </div>
+
+  <div>
+    <label for="team2Path">Team 2 Image Path:</label>
+    <input type="text" id="team2Path" placeholder="Enter new image path for Team 2">
+    <button onclick="updateTeam2Path()">Update Team 2 Path</button>
+  </div>
+
+  <!-- Load Firebase SDK v8 -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <script>
+    // Check if the user is logged in
+    if (!window.localStorage.getItem('loggedIn')) {
+      alert('You must log in first!');
+      window.location.href = 'login.html'; // Redirect to login page
+    }
+
+    // Firebase Configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDsot1H1cAD02oWrswIMm5rNkvV4xxuGDM",
+      authDomain: "capstone-design-global-sw.firebaseapp.com",
+      databaseURL: "https://capstone-design-global-sw-default-rtdb.firebaseio.com",
+      projectId: "capstone-design-global-sw",
+      storageBucket: "capstone-design-global-sw.appspot.com",
+      messagingSenderId: "686741692448",
+      appId: "1:686741692448:web:c812564389ed1ccaf31c45"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a reference to the database service
+    const database = firebase.database();
+
+    // Function to update Team 1 Image Path
+    function updateTeam1Path() {
+      const team1Path = document.getElementById('team1Path').value;
+
+      if (team1Path) {
+        database.ref('imagePath/team1').set(team1Path)
+          .then(() => {
+            alert('Team 1 image path updated successfully!');
+          })
+          .catch((error) => {
+            console.error('Error updating Team 1 image path:', error);
+          });
+      } else {
+        alert('Please enter a valid path for Team 1.');
+      }
+    }
+
+    // Function to update Team 2 Image Path
+    function updateTeam2Path() {
+      const team2Path = document.getElementById('team2Path').value;
+      const alertt = window.localStorage.getItem('loggedIn')
+      if (team2Path) {
+        database.ref('imagePath/team2').set(team2Path)
+          .then(() => {
+            alert('Team 2 image path updated successfully!' + alertt);
+          })
+          .catch((error) => {
+            console.error('Error updating Team 2 image path:', error);
+          });
+      } else {
+        alert('Please enter a valid path for Team 2.');
+      }
+    }
+  </script>
+</body>
+</html>
