@@ -1,0 +1,75 @@
+/* 전체 페이지 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center;
+    color: #080f08;
+    margin-bottom: 30px;
+}
+
+/* 입력 필드 및 버튼을 감싸는 div 스타일 */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0; /* 각 그룹의 위 아래 간격 조정 */
+}
+
+/* 레이블 스타일 */
+label {
+    font-weight: bold;
+    margin-right: 10px; /* 레이블과 입력 필드 간격 조정 */
+}
+
+/* 입력 필드 스타일 */
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    margin-right: 10px; /* 입력 필드와 버튼 간격 조정 */
+    font-size: 16px;
+}
+
+/* 버튼 스타일 */
+button {
+    margin-bottom: 20px;
+    background-color: #d3e2ce;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 버튼 호버 효과 */
+button:hover {
+    background-color: #45a049;
+}
+
+/* 팀 1과 팀 2 간격 조정 */
+.input-group1 + .input-group2 {
+    margin-top: 40px; /* 팀 1과 팀 2 간의 간격 조정 */
+}
+
+/* 알림 메시지 스타일 */
+.alert {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
