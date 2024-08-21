@@ -3,21 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/login.css" type="text/css">
   <title>Login</title>
+
 </head>
 <body>
-  <h1>Login to Admin Panel</h1>
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" placeholder="Enter your username">
   </div>
+  <div class="login-container">
+    <h1>Login to Admin Panel</h1>
+    <div>
+        <label for="username">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Username</label>
+        <input type="text" id="username" class="username" placeholder="ID">
+    </div>
+    <div>
+        <label for="password">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password</label>
+        <input type="password" id="password" placeholder="password">
+    </div>
+    <button onclick="login()">Login</button>
+</div>
 
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password" placeholder="Enter your password">
-  </div>
 
-  <button onclick="login()">Login</button>
 
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>

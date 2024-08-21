@@ -1,0 +1,90 @@
+/* 기본 스타일 설정 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* 제목 스타일 */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #050b05;
+}
+
+/* 입력 필드 스타일 */
+div {
+    margin: 10px 0;
+    text-align: center; /* Center-align the text */
+}
+
+label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left; /* Labels are still left-aligned */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+    display: block; /* Ensures the input takes up the full width of its container */
+    margin: 0 auto; /* Centers the input fields horizontally */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 버튼 스타일 */
+button {
+    margin-top: 20px;
+    background-color: #d3e2ce;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+    input[type="text"],
+    input[type="password"],
+    button {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
+/* 로그인 박스 스타일 */
+.login-container {
+    background-color: white; /* 박스 배경색 */
+    border-radius: 10px; /* 모서리 둥글기 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    padding: 40px; /* 내부 여백 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
